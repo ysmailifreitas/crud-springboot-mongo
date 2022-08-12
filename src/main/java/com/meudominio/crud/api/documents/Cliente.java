@@ -1,5 +1,8 @@
 package com.meudominio.crud.api.documents;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -23,6 +26,7 @@ public class Cliente {
 		this.id = id;
 	}
 
+	@NotEmpty(message="Nome não pode ser nulo!")
 	public String getNome() {
 		return nome;
 	}
@@ -31,6 +35,8 @@ public class Cliente {
 		this.nome = nome;
 	}
 
+	@NotEmpty(message="Email não pode ser nulo!")
+	@Email(message="Email inválido!")
 	public String getEmail() {
 		return email;
 	}
@@ -39,6 +45,8 @@ public class Cliente {
 		this.email = email;
 	}
 
+	@NotEmpty(message="CPF não pode ser vazio")
+//	@CPF(message="CPF inválido")
 	public String getCpf() {
 		return cpf;
 	}

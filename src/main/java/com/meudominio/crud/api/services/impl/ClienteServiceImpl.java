@@ -37,7 +37,7 @@ public class ClienteServiceImpl implements ClienteService {
 
 	@Override
 	public void remover(String id) {
-		return this.clienteRepository.delete(id);
+		this.clienteRepository.deleteById(id);
 	}
 
 }

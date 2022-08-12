@@ -6,4 +6,6 @@ import com.meudominio.crud.api.documents.Cliente;
 
 public interface ClienteRepository extends MongoRepository<Cliente, String> {
 
+	Cliente findOne(String id);
+
 }
